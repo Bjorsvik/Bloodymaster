@@ -43,3 +43,17 @@ C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\bin\Debug\Prosjekt2017.e
 C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\Prosjekt2017.exe
 C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\Prosjekt2017.xml
 C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\Prosjekt2017.pdb
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\bin\Debug\Prosjekt2017.exe
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\bin\Debug\Prosjekt2017.pdb
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\bin\Debug\Prosjekt2017.xml
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\bin\Debug\MySql.Data.xml
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\Prosjekt2017.vbprojResolveAssemblyReference.cache
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.Ansattside.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.egenerklering.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.listbox1_egenerklering.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.minside.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.Registreringsskjema.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.Hjemmeside.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.Resources.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\WindowsApplication1.SplashScreen.resources
+C:\Prosjekt 2017\Bloodymaster\Prosjekt2017\Prosjekt2017\obj\Debug\Prosjekt2017.vbproj.GenerateResource.Cache

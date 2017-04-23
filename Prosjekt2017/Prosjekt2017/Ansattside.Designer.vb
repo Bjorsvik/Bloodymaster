@@ -22,12 +22,14 @@ Partial Class Ansattside
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Statistikk = New System.Windows.Forms.TabPage()
         Me.gridStAar = New System.Windows.Forms.DataGridView()
+        Me.AntregistrerteAar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gridStMaaned = New System.Windows.Forms.DataGridView()
+        Me.antRegMaaned = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbStatistikk = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Reservasjoner = New System.Windows.Forms.TabPage()
@@ -52,6 +54,12 @@ Partial Class Ansattside
         Me.btnVisPlater = New System.Windows.Forms.Button()
         Me.btnVisCeller = New System.Windows.Forms.Button()
         Me.blodGrid = New System.Windows.Forms.DataGridView()
+        Me.datoblod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Blodtypegrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.blodproduktpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diffceller = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SkrivUt = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.cboBlod = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.gridBlodplater = New System.Windows.Forms.DataGridView()
@@ -433,14 +441,6 @@ Partial Class Ansattside
         Me.Label133 = New System.Windows.Forms.Label()
         Me.Label134 = New System.Windows.Forms.Label()
         Me.btnLogUt = New System.Windows.Forms.Button()
-        Me.antRegMaaned = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AntregistrerteAar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.datoblod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Blodtypegrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.blodproduktpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.diffceller = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SkrivUt = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Statistikk.SuspendLayout()
         CType(Me.gridStAar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridStMaaned, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -544,6 +544,18 @@ Partial Class Ansattside
         Me.gridStAar.Size = New System.Drawing.Size(193, 43)
         Me.gridStAar.TabIndex = 2
         '
+        'AntregistrerteAar
+        '
+        DataGridViewCellStyle1.NullValue = "0"
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.AntregistrerteAar.DefaultCellStyle = DataGridViewCellStyle1
+        Me.AntregistrerteAar.HeaderText = "Antall registrerte i år"
+        Me.AntregistrerteAar.Name = "AntregistrerteAar"
+        Me.AntregistrerteAar.ReadOnly = True
+        Me.AntregistrerteAar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.AntregistrerteAar.Width = 200
+        '
         'gridStMaaned
         '
         Me.gridStMaaned.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -553,6 +565,19 @@ Partial Class Ansattside
         Me.gridStMaaned.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.gridStMaaned.Size = New System.Drawing.Size(219, 43)
         Me.gridStMaaned.TabIndex = 1
+        '
+        'antRegMaaned
+        '
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.NullValue = "0"
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.antRegMaaned.DefaultCellStyle = DataGridViewCellStyle2
+        Me.antRegMaaned.HeaderText = "Antall registrerte denne måneden"
+        Me.antRegMaaned.Name = "antRegMaaned"
+        Me.antRegMaaned.ReadOnly = True
+        Me.antRegMaaned.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.antRegMaaned.Width = 200
         '
         'lbStatistikk
         '
@@ -790,13 +815,65 @@ Partial Class Ansattside
         Me.blodGrid.Size = New System.Drawing.Size(447, 221)
         Me.blodGrid.TabIndex = 17
         '
+        'datoblod
+        '
+        Me.datoblod.HeaderText = "Dato"
+        Me.datoblod.Name = "datoblod"
+        Me.datoblod.ReadOnly = True
+        Me.datoblod.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datoblod.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Blodtypegrid
+        '
+        Me.Blodtypegrid.HeaderText = "Blodtype"
+        Me.Blodtypegrid.Name = "Blodtypegrid"
+        Me.Blodtypegrid.ReadOnly = True
+        Me.Blodtypegrid.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Blodtypegrid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Blodtypegrid.Width = 50
+        '
+        'blodproduktpose
+        '
+        Me.blodproduktpose.HeaderText = "Poser"
+        Me.blodproduktpose.Name = "blodproduktpose"
+        Me.blodproduktpose.ReadOnly = True
+        Me.blodproduktpose.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.blodproduktpose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.blodproduktpose.Width = 70
+        '
+        'diffceller
+        '
+        Me.diffceller.HeaderText = "Ant dager gått"
+        Me.diffceller.Name = "diffceller"
+        Me.diffceller.ReadOnly = True
+        Me.diffceller.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.diffceller.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'bID
+        '
+        Me.bID.HeaderText = "bID"
+        Me.bID.Name = "bID"
+        Me.bID.Width = 30
+        '
+        'SkrivUt
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray
+        Me.SkrivUt.DefaultCellStyle = DataGridViewCellStyle3
+        Me.SkrivUt.HeaderText = "SkrivUt"
+        Me.SkrivUt.Name = "SkrivUt"
+        Me.SkrivUt.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SkrivUt.Width = 50
+        '
         'cboBlod
         '
+        Me.cboBlod.Enabled = False
         Me.cboBlod.FormattingEnabled = True
         Me.cboBlod.Items.AddRange(New Object() {"A+", "A-", "B+", "B-", "0+", "0-", "AB+", "AB-"})
         Me.cboBlod.Location = New System.Drawing.Point(137, 401)
         Me.cboBlod.Name = "cboBlod"
-        Me.cboBlod.Size = New System.Drawing.Size(121, 21)
+        Me.cboBlod.Size = New System.Drawing.Size(49, 21)
         Me.cboBlod.TabIndex = 16
         Me.cboBlod.Text = "A+"
         '
@@ -921,7 +998,7 @@ Partial Class Ansattside
         Me.cboBlodplater.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cboBlodplater.Location = New System.Drawing.Point(137, 489)
         Me.cboBlodplater.Name = "cboBlodplater"
-        Me.cboBlodplater.Size = New System.Drawing.Size(121, 21)
+        Me.cboBlodplater.Size = New System.Drawing.Size(49, 21)
         Me.cboBlodplater.TabIndex = 4
         Me.cboBlodplater.Text = "1"
         '
@@ -931,7 +1008,7 @@ Partial Class Ansattside
         Me.cboBlodplasma.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cboBlodplasma.Location = New System.Drawing.Point(137, 460)
         Me.cboBlodplasma.Name = "cboBlodplasma"
-        Me.cboBlodplasma.Size = New System.Drawing.Size(121, 21)
+        Me.cboBlodplasma.Size = New System.Drawing.Size(49, 21)
         Me.cboBlodplasma.TabIndex = 3
         Me.cboBlodplasma.Text = "1"
         '
@@ -941,7 +1018,7 @@ Partial Class Ansattside
         Me.cboBlodlegeme.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cboBlodlegeme.Location = New System.Drawing.Point(137, 428)
         Me.cboBlodlegeme.Name = "cboBlodlegeme"
-        Me.cboBlodlegeme.Size = New System.Drawing.Size(121, 21)
+        Me.cboBlodlegeme.Size = New System.Drawing.Size(49, 21)
         Me.cboBlodlegeme.TabIndex = 2
         Me.cboBlodlegeme.Text = "1"
         '
@@ -4578,82 +4655,6 @@ Partial Class Ansattside
         Me.btnLogUt.TabIndex = 16
         Me.btnLogUt.Text = "Log Ut"
         Me.btnLogUt.UseVisualStyleBackColor = True
-        '
-        'antRegMaaned
-        '
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.NullValue = "0"
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.antRegMaaned.DefaultCellStyle = DataGridViewCellStyle2
-        Me.antRegMaaned.HeaderText = "Antall registrerte denne måneden"
-        Me.antRegMaaned.Name = "antRegMaaned"
-        Me.antRegMaaned.ReadOnly = True
-        Me.antRegMaaned.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.antRegMaaned.Width = 200
-        '
-        'AntregistrerteAar
-        '
-        DataGridViewCellStyle1.NullValue = "0"
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.AntregistrerteAar.DefaultCellStyle = DataGridViewCellStyle1
-        Me.AntregistrerteAar.HeaderText = "Antall registrerte i år"
-        Me.AntregistrerteAar.Name = "AntregistrerteAar"
-        Me.AntregistrerteAar.ReadOnly = True
-        Me.AntregistrerteAar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.AntregistrerteAar.Width = 200
-        '
-        'datoblod
-        '
-        Me.datoblod.HeaderText = "Dato"
-        Me.datoblod.Name = "datoblod"
-        Me.datoblod.ReadOnly = True
-        Me.datoblod.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datoblod.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Blodtypegrid
-        '
-        Me.Blodtypegrid.HeaderText = "Blodtype"
-        Me.Blodtypegrid.Name = "Blodtypegrid"
-        Me.Blodtypegrid.ReadOnly = True
-        Me.Blodtypegrid.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Blodtypegrid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Blodtypegrid.Width = 50
-        '
-        'blodproduktpose
-        '
-        Me.blodproduktpose.HeaderText = "Poser"
-        Me.blodproduktpose.Name = "blodproduktpose"
-        Me.blodproduktpose.ReadOnly = True
-        Me.blodproduktpose.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.blodproduktpose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.blodproduktpose.Width = 70
-        '
-        'diffceller
-        '
-        Me.diffceller.HeaderText = "Ant dager gått"
-        Me.diffceller.Name = "diffceller"
-        Me.diffceller.ReadOnly = True
-        Me.diffceller.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.diffceller.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'bID
-        '
-        Me.bID.HeaderText = "bID"
-        Me.bID.Name = "bID"
-        Me.bID.Width = 30
-        '
-        'SkrivUt
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray
-        Me.SkrivUt.DefaultCellStyle = DataGridViewCellStyle3
-        Me.SkrivUt.HeaderText = "SkrivUt"
-        Me.SkrivUt.Name = "SkrivUt"
-        Me.SkrivUt.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.SkrivUt.Width = 50
         '
         'Ansattside
         '
