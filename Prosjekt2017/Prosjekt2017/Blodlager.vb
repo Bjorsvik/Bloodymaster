@@ -63,8 +63,7 @@
     Blodtype.blodID
     
      FROM Blodtype
-                         Join Blodceller ON Blodtype.blodID = Blodceller.blodID  
-    Group By dato, blodtype
+                         Join Blodceller ON Blodtype.blodID = Blodceller.blodID
     ) As innertable
 
     Where diffCeller < 36 AND blodtype = '" & blodtype & "'")
@@ -82,7 +81,6 @@
     
      FROM Blodtype
                          Join Blodplater ON Blodtype.blodID = Blodplater.blodID  
-    Group By dato, blodtype
     ) As innertable
 
     Where diffPlater < 8 AND blodtype = '" & blodtype & "'")

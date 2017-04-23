@@ -22,6 +22,8 @@ Partial Class minside
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabBrukerinfo = New System.Windows.Forms.TabPage()
         Me.lbEpost = New System.Windows.Forms.Label()
@@ -48,14 +50,14 @@ Partial Class minside
         Me.txtFornavn = New System.Windows.Forms.TextBox()
         Me.tabHistorikk = New System.Windows.Forms.TabPage()
         Me.gridHistorikk = New System.Windows.Forms.DataGridView()
-        Me.Dato = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Blodposer = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabReservasjon = New System.Windows.Forms.TabPage()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.btnReserverTime = New System.Windows.Forms.Button()
         Me.btnSkjema = New System.Windows.Forms.Button()
         Me.btnLogUt = New System.Windows.Forms.Button()
+        Me.historikkDato = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.historikkBlodposer = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.tabBrukerinfo.SuspendLayout()
         Me.tabHistorikk.SuspendLayout()
@@ -109,7 +111,7 @@ Partial Class minside
         'lbEpost
         '
         Me.lbEpost.AutoSize = True
-        Me.lbEpost.Location = New System.Drawing.Point(168, 293)
+        Me.lbEpost.Location = New System.Drawing.Point(168, 295)
         Me.lbEpost.Name = "lbEpost"
         Me.lbEpost.Size = New System.Drawing.Size(34, 13)
         Me.lbEpost.TabIndex = 22
@@ -117,16 +119,16 @@ Partial Class minside
         '
         'txtEpost
         '
-        Me.txtEpost.Location = New System.Drawing.Point(219, 290)
+        Me.txtEpost.Location = New System.Drawing.Point(219, 292)
         Me.txtEpost.Name = "txtEpost"
-        Me.txtEpost.Size = New System.Drawing.Size(100, 20)
+        Me.txtEpost.Size = New System.Drawing.Size(160, 20)
         Me.txtEpost.TabIndex = 21
         '
         'lbPersonID
         '
         Me.lbPersonID.AutoSize = True
         Me.lbPersonID.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbPersonID.Location = New System.Drawing.Point(700, 27)
+        Me.lbPersonID.Location = New System.Drawing.Point(734, 18)
         Me.lbPersonID.Name = "lbPersonID"
         Me.lbPersonID.Size = New System.Drawing.Size(0, 29)
         Me.lbPersonID.TabIndex = 20
@@ -135,11 +137,11 @@ Partial Class minside
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(522, 27)
+        Me.Label3.Location = New System.Drawing.Point(507, 18)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(178, 29)
+        Me.Label3.Size = New System.Drawing.Size(210, 29)
         Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Brukernummer:"
+        Me.Label3.Text = "Blodgivernummer:"
         '
         'txtFodselsdato
         '
@@ -163,9 +165,9 @@ Partial Class minside
         Me.lbPoststed.AutoSize = True
         Me.lbPoststed.Location = New System.Drawing.Point(509, 206)
         Me.lbPoststed.Name = "lbPoststed"
-        Me.lbPoststed.Size = New System.Drawing.Size(39, 13)
+        Me.lbPoststed.Size = New System.Drawing.Size(48, 13)
         Me.lbPoststed.TabIndex = 16
-        Me.lbPoststed.Text = "Label2"
+        Me.lbPoststed.Text = "Poststed"
         '
         'Label1
         '
@@ -197,7 +199,7 @@ Partial Class minside
         '
         Me.txtAdresse.Location = New System.Drawing.Point(509, 123)
         Me.txtAdresse.Name = "txtAdresse"
-        Me.txtAdresse.Size = New System.Drawing.Size(148, 20)
+        Me.txtAdresse.Size = New System.Drawing.Size(157, 20)
         Me.txtAdresse.TabIndex = 11
         '
         'lbPoststedLabel
@@ -305,22 +307,14 @@ Partial Class minside
         '
         'gridHistorikk
         '
+        Me.gridHistorikk.BackgroundColor = System.Drawing.SystemColors.Control
         Me.gridHistorikk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridHistorikk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Dato, Me.Blodposer})
-        Me.gridHistorikk.Location = New System.Drawing.Point(236, 100)
+        Me.gridHistorikk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.historikkDato, Me.historikkBlodposer})
+        Me.gridHistorikk.Location = New System.Drawing.Point(278, 67)
         Me.gridHistorikk.Name = "gridHistorikk"
-        Me.gridHistorikk.Size = New System.Drawing.Size(240, 150)
+        Me.gridHistorikk.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.gridHistorikk.Size = New System.Drawing.Size(244, 237)
         Me.gridHistorikk.TabIndex = 0
-        '
-        'Dato
-        '
-        Me.Dato.HeaderText = "Dato"
-        Me.Dato.Name = "Dato"
-        '
-        'Blodposer
-        '
-        Me.Blodposer.HeaderText = "Blodposer"
-        Me.Blodposer.Name = "Blodposer"
         '
         'tabReservasjon
         '
@@ -378,6 +372,24 @@ Partial Class minside
         Me.btnLogUt.Text = "Logg ut"
         Me.btnLogUt.UseVisualStyleBackColor = True
         '
+        'historikkDato
+        '
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.historikkDato.DefaultCellStyle = DataGridViewCellStyle1
+        Me.historikkDato.HeaderText = "Dato"
+        Me.historikkDato.Name = "historikkDato"
+        Me.historikkDato.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.historikkDato.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'historikkBlodposer
+        '
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.historikkBlodposer.DefaultCellStyle = DataGridViewCellStyle2
+        Me.historikkBlodposer.HeaderText = "Blodposer"
+        Me.historikkBlodposer.Name = "historikkBlodposer"
+        '
         'minside
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -426,9 +438,9 @@ Partial Class minside
     Friend WithEvents MonthCalendar1 As MonthCalendar
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents gridHistorikk As DataGridView
-    Friend WithEvents Dato As DataGridViewTextBoxColumn
-    Friend WithEvents Blodposer As DataGridViewTextBoxColumn
     Friend WithEvents btnLogUt As Button
     Friend WithEvents lbEpost As Label
     Friend WithEvents txtEpost As TextBox
+    Friend WithEvents historikkDato As DataGridViewTextBoxColumn
+    Friend WithEvents historikkBlodposer As DataGridViewTextBoxColumn
 End Class

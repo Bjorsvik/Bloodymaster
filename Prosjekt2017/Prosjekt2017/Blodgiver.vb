@@ -37,7 +37,8 @@ Public Class Blodgiver
                          JOIN Reservasjon ON Person.personID = Reservasjon.personID
                          JOIN Blodtype ON Reservasjon.resID = Blodtype.resID
                          WHERE Person.personID = " & "'" & personID & "' " &
-                         "Group By Blodtype.blodID")
+                         "Group By Blodtype.blodID
+                          Order By Reservasjon.dato asc")
     End Function
     'Henter ut brukeren/blodgiveren ved bruk av personnummer
     Public Function GetBruker(personnummer As String) As DataTable

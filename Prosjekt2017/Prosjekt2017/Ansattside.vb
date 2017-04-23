@@ -124,21 +124,18 @@ Public Class Ansattside
             blodID = blodGrid.Rows(e.RowIndex).Cells(4).Value
             Blodlager.skrivUtBlodceller(blodID)
             visCeller()
-            MsgBox(blodID)
 
         ElseIf e.ColumnIndex = 5 And blodprodukt = "Plasma" Then
 
             blodID = blodGrid.Rows(e.RowIndex).Cells(4).Value
             Blodlager.skrivUtBlodplasma(blodID)
             visPlasma()
-            MsgBox(blodID)
 
         ElseIf e.ColumnIndex = 5 And blodprodukt = "Plater" Then
 
             blodID = blodGrid.Rows(e.RowIndex).Cells(4).Value
             Blodlager.skrivUtBlodplater(blodID)
             visPlater()
-            MsgBox(blodID)
 
         End If
     End Sub
@@ -796,5 +793,4 @@ Public Class Ansattside
         txtboxTilgjengelig.Text = teller.ToString
 
     End Sub
-
 End Class
